@@ -1,0 +1,21 @@
+{
+  "name": "loja-virtual",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E-commerce de moda (React + Express + SQLite local)",
+  "type": "module",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "start": "npm run build -w client && npm run start -w server",
+    "build": "npm run build -w client",
+    "db:init": "npm run db:init -w server",
+    "db:seed": "npm run db:seed -w server",
+    "db:restore-demo": "npm run db:restore-demo -w server",
+    "db:backup": "npm run db:backup -w server",
+    "db:import-photos": "npm run db:import-photos -w server",
+    "test": "npm run test -w server"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": { "concurrently": "^9.1.0" }
+}

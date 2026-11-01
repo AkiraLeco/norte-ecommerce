@@ -1,0 +1,29 @@
+{
+  "name": "loja-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "db:init": "node database/init.js",
+    "db:seed": "node database/seed.js",
+    "db:restore-demo": "node database/seed.js --reset",
+    "db:backup": "node database/backup.js",
+    "db:import-photos": "node database/import-photos.js",
+    "test": "node tests/smoke.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "zod": "^4.6.7"
+  }
+}
